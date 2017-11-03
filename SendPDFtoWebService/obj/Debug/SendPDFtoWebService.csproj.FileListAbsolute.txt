@@ -1,0 +1,10 @@
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\bin\Debug\SendPDFtoWebService.exe.config
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\bin\Debug\SendPDFtoWebService.exe
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\bin\Debug\SendPDFtoWebService.pdb
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.csprojResolveAssemblyReference.cache
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.Form1.resources
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.Properties.Resources.resources
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.csproj.GenerateResource.Cache
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.csproj.CoreCompileInputs.cache
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.exe
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.pdb
