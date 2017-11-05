@@ -50,10 +50,12 @@ namespace SendPDFtoWebService
 
                 var payload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><CaptureFile xmlns=\"http://tempuri.org/\"><faxNumber>"+faxNumber+"</faxNumber><DocumentContent>"+doc+"</DocumentContent></CaptureFile></soap:Body></soap:Envelope>";
                 var data = Encoding.UTF8.GetBytes(payload);
-                var result = client.UploadData("http://localhost:8087/SendFaxGateway.asmx", data);
+
+                //To call other server, please change the url on the App Settings: <add key="webService" value="http://localhost:8087/SendFaxGateway.asmx"/>
+                var result = client.UploadData(System.Configuration.ConfigurationManager.AppSettings["webService"], data);
                 if (client.StatusCode() == HttpStatusCode.OK)
                 {
-
+                    MessageBox.Show(Encoding.Default.GetString(result));
                 }
                                 
             }
