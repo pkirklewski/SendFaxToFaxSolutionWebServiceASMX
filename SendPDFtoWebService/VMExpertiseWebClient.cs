@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SendPDFtoWebService
 {
+
     public class VMExpertiseWebClient : WebClient
     {
         private WebRequest _Request = null;
@@ -22,6 +23,7 @@ namespace SendPDFtoWebService
 
             return this._Request;
         }
+
 
         public HttpStatusCode StatusCode()
         {

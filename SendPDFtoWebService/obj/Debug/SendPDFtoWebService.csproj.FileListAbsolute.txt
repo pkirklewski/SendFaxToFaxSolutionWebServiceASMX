@@ -2,7 +2,6 @@ C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\bin\Debug\S
 C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\bin\Debug\SendPDFtoWebService.exe
 C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\bin\Debug\SendPDFtoWebService.pdb
 C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.csprojResolveAssemblyReference.cache
-C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.Form1.resources
 C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.Properties.Resources.resources
 C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.csproj.GenerateResource.Cache
 C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.csproj.CoreCompileInputs.cache
@@ -17,3 +16,4 @@ Z:\VMExpertise\SOAP\SendFaxToFaxSolutionWebServiceASMX\SendFaxToFaxSolutionWebSe
 Z:\VMExpertise\SOAP\SendFaxToFaxSolutionWebServiceASMX\SendFaxToFaxSolutionWebServiceASMX\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.Properties.Resources.resources
 Z:\VMExpertise\SOAP\SendFaxToFaxSolutionWebServiceASMX\SendFaxToFaxSolutionWebServiceASMX\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.csproj.GenerateResource.Cache
 Z:\VMExpertise\SOAP\SendFaxToFaxSolutionWebServiceASMX\SendFaxToFaxSolutionWebServiceASMX\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.csprojResolveAssemblyReference.cache
+C:\Users\LT5244\source\repos\SendPDFtoWebService\SendPDFtoWebService\obj\Debug\SendPDFtoWebService.Destination.resources
