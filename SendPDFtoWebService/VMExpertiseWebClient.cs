@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SendPDFtoWebService
 {
 
-    public class VMExpertiseWebClient : WebClient
+    public class ENGIEWebClient : WebClient
     {
         private WebRequest _Request = null;
 

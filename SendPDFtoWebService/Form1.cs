@@ -42,7 +42,7 @@ namespace SendPDFtoWebService
 
         private void callWebService(string faxNumber, string doc)
         {
-            using (VMExpertiseWebClient client = new VMExpertiseWebClient())
+            using (ENGIEWebClient client = new ENGIEWebClient())
             {
                 client.Headers.Add("SOAPAction", "\"http://tempuri.org/CaptureFile\"");
                 client.Headers.Add("Content-Type", "text/xml; charset=utf-8");
