@@ -52,13 +52,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.comboDocumentType = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 366);
+            this.button1.Location = new System.Drawing.Point(15, 340);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 72);
+            this.button1.Size = new System.Drawing.Size(279, 72);
             this.button1.TabIndex = 0;
             this.button1.Text = "SendPDF";
             this.button1.UseVisualStyleBackColor = true;
@@ -69,7 +70,7 @@
             this.textBox1.Location = new System.Drawing.Point(127, 73);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 3;
             this.textBox1.Text = "+441923396735";
             // 
             // textBox2
@@ -77,7 +78,7 @@
             this.textBox2.Location = new System.Drawing.Point(127, 204);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 2;
+            this.textBox2.TabIndex = 8;
             this.textBox2.Text = "C:\\pdf-sample.pdf";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -96,7 +97,8 @@
             this.uName.Location = new System.Drawing.Point(124, 18);
             this.uName.Name = "uName";
             this.uName.Size = new System.Drawing.Size(170, 20);
-            this.uName.TabIndex = 4;
+            this.uName.TabIndex = 1;
+            this.uName.Text = "u001";
             this.uName.TextChanged += new System.EventHandler(this.uName_TextChanged);
             // 
             // label2
@@ -123,7 +125,7 @@
             this.Receipt.Location = new System.Drawing.Point(124, 126);
             this.Receipt.Name = "Receipt";
             this.Receipt.Size = new System.Drawing.Size(170, 20);
-            this.Receipt.TabIndex = 10;
+            this.Receipt.TabIndex = 5;
             this.Receipt.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
@@ -141,7 +143,7 @@
             this.comboPriority.Location = new System.Drawing.Point(124, 99);
             this.comboPriority.Name = "comboPriority";
             this.comboPriority.Size = new System.Drawing.Size(170, 21);
-            this.comboPriority.TabIndex = 11;
+            this.comboPriority.TabIndex = 4;
             this.comboPriority.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
@@ -159,7 +161,8 @@
             this.passWord.Name = "passWord";
             this.passWord.PasswordChar = '*';
             this.passWord.Size = new System.Drawing.Size(170, 20);
-            this.passWord.TabIndex = 6;
+            this.passWord.TabIndex = 2;
+            this.passWord.Text = "Password123.";
             this.passWord.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // SenderFaxNumber
@@ -167,7 +170,7 @@
             this.SenderFaxNumber.Location = new System.Drawing.Point(124, 152);
             this.SenderFaxNumber.Name = "SenderFaxNumber";
             this.SenderFaxNumber.Size = new System.Drawing.Size(170, 20);
-            this.SenderFaxNumber.TabIndex = 13;
+            this.SenderFaxNumber.TabIndex = 6;
             this.SenderFaxNumber.TextChanged += new System.EventHandler(this.textBox3_TextChanged_2);
             // 
             // label6
@@ -184,7 +187,7 @@
             this.FaxRequestDateTime.Location = new System.Drawing.Point(124, 178);
             this.FaxRequestDateTime.Name = "FaxRequestDateTime";
             this.FaxRequestDateTime.Size = new System.Drawing.Size(170, 20);
-            this.FaxRequestDateTime.TabIndex = 15;
+            this.FaxRequestDateTime.TabIndex = 7;
             this.FaxRequestDateTime.TextChanged += new System.EventHandler(this.textBox3_TextChanged_3);
             // 
             // label7
@@ -202,24 +205,24 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(12, 211);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 13);
+            this.label8.Size = new System.Drawing.Size(68, 13);
             this.label8.TabIndex = 16;
-            this.label8.Text = "Document";
+            this.label8.Text = "Document01";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // comboSeqNumber
             // 
             this.comboSeqNumber.FormattingEnabled = true;
-            this.comboSeqNumber.Location = new System.Drawing.Point(127, 230);
+            this.comboSeqNumber.Location = new System.Drawing.Point(124, 256);
             this.comboSeqNumber.Name = "comboSeqNumber";
             this.comboSeqNumber.Size = new System.Drawing.Size(170, 21);
-            this.comboSeqNumber.TabIndex = 17;
+            this.comboSeqNumber.TabIndex = 10;
             this.comboSeqNumber.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 238);
+            this.label9.Location = new System.Drawing.Point(9, 264);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 13);
             this.label9.TabIndex = 18;
@@ -228,25 +231,25 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(300, 204);
+            this.textBox3.Location = new System.Drawing.Point(124, 230);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(167, 20);
-            this.textBox3.TabIndex = 19;
+            this.textBox3.Size = new System.Drawing.Size(170, 20);
+            this.textBox3.TabIndex = 9;
             this.textBox3.Text = "C:\\pdf-sample1.pdf";
             // 
             // textBoxDocumentId
             // 
-            this.textBoxDocumentId.Location = new System.Drawing.Point(127, 257);
+            this.textBoxDocumentId.Location = new System.Drawing.Point(124, 283);
             this.textBoxDocumentId.Name = "textBoxDocumentId";
             this.textBoxDocumentId.Size = new System.Drawing.Size(170, 20);
-            this.textBoxDocumentId.TabIndex = 21;
+            this.textBoxDocumentId.TabIndex = 11;
             this.textBoxDocumentId.Text = "001";
             this.textBoxDocumentId.TextChanged += new System.EventHandler(this.textBoxDocumentId_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 264);
+            this.label10.Location = new System.Drawing.Point(12, 290);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 20;
@@ -255,7 +258,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 290);
+            this.label11.Location = new System.Drawing.Point(12, 316);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 13);
             this.label11.TabIndex = 22;
@@ -265,17 +268,27 @@
             // comboDocumentType
             // 
             this.comboDocumentType.FormattingEnabled = true;
-            this.comboDocumentType.Location = new System.Drawing.Point(127, 287);
+            this.comboDocumentType.Location = new System.Drawing.Point(124, 313);
             this.comboDocumentType.Name = "comboDocumentType";
             this.comboDocumentType.Size = new System.Drawing.Size(170, 21);
-            this.comboDocumentType.TabIndex = 23;
+            this.comboDocumentType.TabIndex = 12;
             this.comboDocumentType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_2);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 237);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 13);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Document02";
             // 
             // Destination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 450);
+            this.ClientSize = new System.Drawing.Size(321, 418);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.comboDocumentType);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBoxDocumentId);
@@ -334,6 +347,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboDocumentType;
+        private System.Windows.Forms.Label label12;
     }
 }
 

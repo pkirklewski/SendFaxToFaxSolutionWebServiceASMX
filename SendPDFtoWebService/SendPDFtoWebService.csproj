@@ -58,7 +58,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VMExpertiseWebClient.cs">
+    <Compile Include="EngieWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Web References\SendPdfToWebService\Reference.cs">

@@ -37,9 +37,6 @@ namespace SendPDFtoWebService
             }
         }
 
-
-
-
         private void callWebService(string faxNumber, string doc)
         {
             using (ENGIEWebClient client = new ENGIEWebClient())
@@ -57,7 +54,6 @@ namespace SendPDFtoWebService
                 {
                     MessageBox.Show(Encoding.Default.GetString(result));
                 }
-
             }
         }
 
