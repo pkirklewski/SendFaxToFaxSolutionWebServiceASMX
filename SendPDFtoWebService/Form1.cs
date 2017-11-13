@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SendPDFtoWebService;
 using System.IO;
 using System.Net;
 using System.Xml;
+using Microsoft.Xml.XMLGen;
 
 namespace SendPDFtoWebService
 {
@@ -40,12 +34,12 @@ namespace SendPDFtoWebService
         private void callWebService(string faxNumber, string doc)
         {
             using (ENGIEWebClient client = new ENGIEWebClient())
-            {
-                client.Headers.Add("SOAPAction", "\"http://tempuri.org/CaptureFile\"");
+            { //
+                client.Headers.Add("SOAPAction", "\"http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0/SendFAX");
                 client.Headers.Add("Content-Type", "text/xml; charset=utf-8");
                 //client.Headers.Add("Host", "localhost");
 
-                var payload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><CaptureFile xmlns=\"http://tempuri.org/\"><faxNumber>" + faxNumber + "</faxNumber><DocumentContent>" + doc + "</DocumentContent></CaptureFile></soap:Body></soap:Envelope>";
+                var payload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><SendFAX xmlns=\"http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0/\"><faxNumber>" + faxNumber + "</faxNumber><DocumentContent>" + doc + "</DocumentContent></SendFAX></soap:Body></soap:Envelope>";
                 var data = Encoding.UTF8.GetBytes(payload);
 
                 //To call other server, please change the url on the App Settings: <add key="webService" value="http://localhost:8087/SendFaxGateway.asmx"/>
@@ -205,6 +199,17 @@ namespace SendPDFtoWebService
 
         private void label11_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string t1 = DateTime.Now.ToString().Replace(@"/", "").Replace(" ", "").Replace(":", "");
+            XmlTextWriter textWriter = new XmlTextWriter(t1 + ".xml", null);
+            textWriter.Formatting = Formatting.Indented;
+            XmlQualifiedName  qname = new XmlQualifiedName("SendFAX", "http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0");
+            XmlSampleGenerator generator = new XmlSampleGenerator("..\\..\\XSDs\\FAXGateway.xsd", qname);
+            generator.WriteXml(textWriter);
 
         }
     }

@@ -26,10 +26,12 @@ namespace SendPDFtoWebService.SendPdfToWebService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2053.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="SendFaxGatewaySoap", Namespace="http://tempuri.org/")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="SendFaxGatewaySoap", Namespace="http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0")]
     public partial class SendFaxGateway : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback CaptureFileOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SendFAXOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -73,7 +75,13 @@ namespace SendPDFtoWebService.SendPdfToWebService {
         public event CaptureFileCompletedEventHandler CaptureFileCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CaptureFile", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public event SendFAXCompletedEventHandler SendFAXCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgat" +
+            "eway/1.0/CaptureFile", RequestNamespace="http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgat" +
+            "eway/1.0", ResponseNamespace="http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgat" +
+            "eway/1.0", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public int CaptureFile(string faxNumber, [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")] byte[] DocumentContent) {
             object[] results = this.Invoke("CaptureFile", new object[] {
                         faxNumber,
@@ -100,6 +108,40 @@ namespace SendPDFtoWebService.SendPdfToWebService {
             if ((this.CaptureFileCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.CaptureFileCompleted(this, new CaptureFileCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgat" +
+            "eway/1.0/SendFAX", RequestNamespace="http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgat" +
+            "eway/1.0", ResponseNamespace="http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgat" +
+            "eway/1.0", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int SendFAX(string faxNumber, [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")] byte[] DocumentContent) {
+            object[] results = this.Invoke("SendFAX", new object[] {
+                        faxNumber,
+                        DocumentContent});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SendFAXAsync(string faxNumber, byte[] DocumentContent) {
+            this.SendFAXAsync(faxNumber, DocumentContent, null);
+        }
+        
+        /// <remarks/>
+        public void SendFAXAsync(string faxNumber, byte[] DocumentContent, object userState) {
+            if ((this.SendFAXOperationCompleted == null)) {
+                this.SendFAXOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendFAXOperationCompleted);
+            }
+            this.InvokeAsync("SendFAX", new object[] {
+                        faxNumber,
+                        DocumentContent}, this.SendFAXOperationCompleted, userState);
+        }
+        
+        private void OnSendFAXOperationCompleted(object arg) {
+            if ((this.SendFAXCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SendFAXCompleted(this, new SendFAXCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -135,6 +177,32 @@ namespace SendPDFtoWebService.SendPdfToWebService {
         private object[] results;
         
         internal CaptureFileCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2053.0")]
+    public delegate void SendFAXCompletedEventHandler(object sender, SendFAXCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2053.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SendFAXCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SendFAXCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

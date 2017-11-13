@@ -66,6 +66,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="XMLGenerator\Facets.cs" />
+    <Compile Include="XMLGenerator\Generator.cs" />
+    <Compile Include="XMLGenerator\InstanceAttribute.cs" />
+    <Compile Include="XMLGenerator\InstanceElement.cs" />
+    <Compile Include="XMLGenerator\InstanceGroup.cs" />
+    <Compile Include="XMLGenerator\InstanceObject.cs" />
+    <Compile Include="XMLGenerator\XmlGen.cs" />
+    <Compile Include="XMLGenerator\XmlSampleGenerator.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +100,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\SendPdfToWebService\SendFaxGateway.wsdl" />
+    <None Include="XSDs\FAXGateway.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -116,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Add\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

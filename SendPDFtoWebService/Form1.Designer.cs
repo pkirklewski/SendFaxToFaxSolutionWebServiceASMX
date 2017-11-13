@@ -53,13 +53,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.comboDocumentType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(15, 340);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(279, 72);
+            this.button1.Size = new System.Drawing.Size(279, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = "SendPDF";
             this.button1.UseVisualStyleBackColor = true;
@@ -283,11 +284,22 @@
             this.label12.TabIndex = 23;
             this.label12.Text = "Document02";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(15, 373);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(279, 27);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Trying XML Generator";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Destination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 418);
+            this.ClientSize = new System.Drawing.Size(321, 466);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.comboDocumentType);
             this.Controls.Add(this.label11);
@@ -348,6 +360,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboDocumentType;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button2;
     }
 }
 
