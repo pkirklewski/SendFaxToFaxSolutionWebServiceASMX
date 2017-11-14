@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxDestination = new System.Windows.Forms.TextBox();
+            this.textBoxDoc1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.uName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,13 +47,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboSeqNumber = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxDoc2 = new System.Windows.Forms.TextBox();
             this.textBoxDocumentId = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.comboDocumentType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -66,22 +67,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textBoxDestination
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "+441923396735";
+            this.textBoxDestination.Location = new System.Drawing.Point(127, 73);
+            this.textBoxDestination.Name = "textBoxDestination";
+            this.textBoxDestination.Size = new System.Drawing.Size(167, 20);
+            this.textBoxDestination.TabIndex = 3;
+            this.textBoxDestination.Text = "+441923396735";
             // 
-            // textBox2
+            // textBoxDoc1
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 204);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.Text = "C:\\pdf-sample.pdf";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxDoc1.Location = new System.Drawing.Point(127, 204);
+            this.textBoxDoc1.Name = "textBoxDoc1";
+            this.textBoxDoc1.Size = new System.Drawing.Size(167, 20);
+            this.textBoxDoc1.TabIndex = 8;
+            this.textBoxDoc1.Text = "C:\\pdf-sample.pdf";
+            this.textBoxDoc1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -230,13 +231,13 @@
             this.label9.Text = "SeqNumber";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // textBox3
+            // textBoxDoc2
             // 
-            this.textBox3.Location = new System.Drawing.Point(124, 230);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 20);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.Text = "C:\\pdf-sample1.pdf";
+            this.textBoxDoc2.Location = new System.Drawing.Point(124, 230);
+            this.textBoxDoc2.Name = "textBoxDoc2";
+            this.textBoxDoc2.Size = new System.Drawing.Size(170, 20);
+            this.textBoxDoc2.TabIndex = 9;
+            this.textBoxDoc2.Text = "C:\\pdf-sample1.pdf";
             // 
             // textBoxDocumentId
             // 
@@ -286,7 +287,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(15, 373);
+            this.button2.Location = new System.Drawing.Point(15, 372);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(279, 27);
             this.button2.TabIndex = 24;
@@ -294,18 +295,29 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(15, 405);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(279, 27);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Send Outbox FaxType";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Destination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 466);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.comboDocumentType);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBoxDocumentId);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxDoc2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboSeqNumber);
             this.Controls.Add(this.label8);
@@ -322,8 +334,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.uName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxDoc1);
+            this.Controls.Add(this.textBoxDestination);
             this.Controls.Add(this.button1);
             this.Name = "Destination";
             this.Text = "CMG";
@@ -336,8 +348,8 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxDestination;
+        private System.Windows.Forms.TextBox textBoxDoc1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox uName;
         private System.Windows.Forms.Label label2;
@@ -354,13 +366,14 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboSeqNumber;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxDoc2;
         private System.Windows.Forms.TextBox textBoxDocumentId;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboDocumentType;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

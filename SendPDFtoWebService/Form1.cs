@@ -22,9 +22,9 @@ namespace SendPDFtoWebService
 
                 // object[] docBytes = new object[1];
 
-                var doc = File.ReadAllBytes(textBox2.Text);
+                var doc = File.ReadAllBytes(textBoxDoc1.Text);
 
-                callWebService(textBox1.Text, Convert.ToBase64String(doc));
+                callWebService(textBoxDestination.Text, Convert.ToBase64String(doc));
                 //spdf.CaptureFileAsync(textBox1.Text, doc,"");
 
                 int x = 1;
@@ -58,17 +58,17 @@ namespace SendPDFtoWebService
             // < xs:element minOccurs = "1" maxOccurs = "1" name = "Documents" type = "fax:Documents" />
             //<xs:element name="Document" type="fax:Document" minOccurs="1" maxOccurs="unbounded"/>
 
-            if (textBox2.Text.Contains(".pdf")) 
+            if (textBoxDoc1.Text.Contains(".pdf")) 
             {
                 comboDocumentType.SelectedIndex = 0;
             }
 
-            if (textBox2.Text.Contains(".xhtml"))
+            if (textBoxDoc1.Text.Contains(".xhtml"))
             {
                 comboDocumentType.SelectedIndex = 1;
             }
 
-            if (textBox2.Text.Contains(".doc"))
+            if (textBoxDoc1.Text.Contains(".doc"))
             {
                 comboDocumentType.SelectedIndex = 2;
             }
@@ -210,6 +210,19 @@ namespace SendPDFtoWebService
             XmlQualifiedName  qname = new XmlQualifiedName("SendFAX", "http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0");
             XmlSampleGenerator generator = new XmlSampleGenerator("..\\..\\XSDs\\FAXGateway.xsd", qname);
             generator.WriteXml(textWriter);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SendOutboundFAXType sendOutboundFAX = new SendOutboundFAXType();
+            sendOutboundFAX.UserName = uName.Text;
+            sendOutboundFAX.PassWord = passWord.Text;
+            sendOutboundFAX.Destination = textBoxDestination.Text.ToString();
+            sendOutboundFAX.Priority = comboPriority.SelectedText.ToString();
+            sendOutboundFAX.Receipt = Receipt.Text;
+            sendOutboundFAX.Sender = SenderFaxNumber.ToString();
+            sendOutboundFAX.FaxRequestDateTime = FaxRequestDateTime.ToString();
+            /// sendOutboundFAX.Documents = textBoxDoc1.Text(); ???????????????????????
 
         }
     }
