@@ -55,11 +55,15 @@
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboSeqNumber1 = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 340);
+            this.button1.Location = new System.Drawing.Point(15, 313);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(279, 27);
             this.button1.TabIndex = 0;
@@ -100,7 +104,7 @@
             this.uName.Name = "uName";
             this.uName.Size = new System.Drawing.Size(170, 20);
             this.uName.TabIndex = 1;
-            this.uName.Text = "u001";
+            this.uName.Text = "User001";
             this.uName.TextChanged += new System.EventHandler(this.uName_TextChanged);
             // 
             // label2
@@ -128,6 +132,7 @@
             this.Receipt.Name = "Receipt";
             this.Receipt.Size = new System.Drawing.Size(170, 20);
             this.Receipt.TabIndex = 5;
+            this.Receipt.Text = "Receipt001";
             this.Receipt.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
@@ -173,6 +178,7 @@
             this.SenderFaxNumber.Name = "SenderFaxNumber";
             this.SenderFaxNumber.Size = new System.Drawing.Size(170, 20);
             this.SenderFaxNumber.TabIndex = 6;
+            this.SenderFaxNumber.Text = "+447890544399";
             this.SenderFaxNumber.TextChanged += new System.EventHandler(this.textBox3_TextChanged_2);
             // 
             // label6
@@ -190,6 +196,7 @@
             this.FaxRequestDateTime.Name = "FaxRequestDateTime";
             this.FaxRequestDateTime.Size = new System.Drawing.Size(170, 20);
             this.FaxRequestDateTime.TabIndex = 7;
+            this.FaxRequestDateTime.Text = "2017-11-08T02:46:42.042";
             this.FaxRequestDateTime.TextChanged += new System.EventHandler(this.textBox3_TextChanged_3);
             // 
             // label7
@@ -215,7 +222,7 @@
             // comboSeqNumber
             // 
             this.comboSeqNumber.FormattingEnabled = true;
-            this.comboSeqNumber.Location = new System.Drawing.Point(124, 256);
+            this.comboSeqNumber.Location = new System.Drawing.Point(369, 204);
             this.comboSeqNumber.Name = "comboSeqNumber";
             this.comboSeqNumber.Size = new System.Drawing.Size(170, 21);
             this.comboSeqNumber.TabIndex = 10;
@@ -224,7 +231,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 264);
+            this.label9.Location = new System.Drawing.Point(300, 211);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 13);
             this.label9.TabIndex = 18;
@@ -241,17 +248,17 @@
             // 
             // textBoxDocumentId
             // 
-            this.textBoxDocumentId.Location = new System.Drawing.Point(124, 283);
+            this.textBoxDocumentId.Location = new System.Drawing.Point(124, 256);
             this.textBoxDocumentId.Name = "textBoxDocumentId";
             this.textBoxDocumentId.Size = new System.Drawing.Size(170, 20);
             this.textBoxDocumentId.TabIndex = 11;
-            this.textBoxDocumentId.Text = "001";
+            this.textBoxDocumentId.Text = "09001a3a800e0978";
             this.textBoxDocumentId.TextChanged += new System.EventHandler(this.textBoxDocumentId_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 290);
+            this.label10.Location = new System.Drawing.Point(12, 263);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 20;
@@ -260,7 +267,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 316);
+            this.label11.Location = new System.Drawing.Point(12, 289);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 13);
             this.label11.TabIndex = 22;
@@ -270,7 +277,7 @@
             // comboDocumentType
             // 
             this.comboDocumentType.FormattingEnabled = true;
-            this.comboDocumentType.Location = new System.Drawing.Point(124, 313);
+            this.comboDocumentType.Location = new System.Drawing.Point(124, 286);
             this.comboDocumentType.Name = "comboDocumentType";
             this.comboDocumentType.Size = new System.Drawing.Size(170, 21);
             this.comboDocumentType.TabIndex = 12;
@@ -287,7 +294,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(15, 372);
+            this.button2.Location = new System.Drawing.Point(15, 345);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(279, 27);
             this.button2.TabIndex = 24;
@@ -297,7 +304,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(15, 405);
+            this.button3.Location = new System.Drawing.Point(15, 378);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(279, 27);
             this.button3.TabIndex = 25;
@@ -305,11 +312,53 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(300, 315);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(239, 89);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "array";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(300, 236);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(63, 13);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "SeqNumber";
+            // 
+            // comboSeqNumber1
+            // 
+            this.comboSeqNumber1.FormattingEnabled = true;
+            this.comboSeqNumber1.Location = new System.Drawing.Point(369, 229);
+            this.comboSeqNumber1.Name = "comboSeqNumber1";
+            this.comboSeqNumber1.Size = new System.Drawing.Size(170, 21);
+            this.comboSeqNumber1.TabIndex = 27;
+            this.comboSeqNumber1.SelectedIndexChanged += new System.EventHandler(this.comboSeqNumber1_SelectedIndexChanged);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(369, 258);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(170, 23);
+            this.button5.TabIndex = 29;
+            this.button5.Text = "Refesh";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Destination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 466);
+            this.ClientSize = new System.Drawing.Size(551, 416);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.comboSeqNumber1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
@@ -374,6 +423,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboSeqNumber1;
+        private System.Windows.Forms.Button button5;
     }
 }
 
