@@ -62,6 +62,7 @@
     <Compile Include="EngieWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VMExpertiseXMLGenerator\Helper.cs" />
     <Compile Include="Web References\SendPdfToWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

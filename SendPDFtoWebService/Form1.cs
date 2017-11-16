@@ -5,6 +5,7 @@ using System.IO;
 using System.Net;
 using System.Xml;
 using Microsoft.Xml.XMLGen;
+using System.Xml.Serialization;
 
 namespace SendPDFtoWebService
 {
@@ -35,11 +36,11 @@ namespace SendPDFtoWebService
         {
             using (ENGIEWebClient client = new ENGIEWebClient())
             { //
-                client.Headers.Add("SOAPAction", "\"http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0/SendFAX");
+                client.Headers.Add("SOAPAction", "\"http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0/SendFAX\"");
                 client.Headers.Add("Content-Type", "text/xml; charset=utf-8");
                 //client.Headers.Add("Host", "localhost");
 
-                var payload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><SendFAX xmlns=\"http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0/\"><faxNumber>" + faxNumber + "</faxNumber><DocumentContent>" + doc + "</DocumentContent></SendFAX></soap:Body></soap:Envelope>";
+                var payload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><SendFAX xmlns=\"http://www.childmaintenance.gsi.gov.uk/futurescheme/outboundCorrespondence/faxgateway/1.0\"><faxNumber></faxNumber><DocumentContent></DocumentContent></SendFAX></soap:Body></soap:Envelope>";
                 var data = Encoding.UTF8.GetBytes(payload);
 
                 //To call other server, please change the url on the App Settings: <add key="webService" value="http://localhost:8087/SendFaxGateway.asmx"/>
@@ -267,8 +268,70 @@ namespace SendPDFtoWebService
             
         }
 
+        private void BuildXMLMessage() {
+            VMExpertiseXMLGenerator.Envelope env = new VMExpertiseXMLGenerator.Envelope();
+            env.Body = new VMExpertiseXMLGenerator.EnvelopeBody();
+
+            VMExpertiseXMLGenerator.SendOutboundFAX sof = new VMExpertiseXMLGenerator.SendOutboundFAX();
+
+            sof.UserName = uName.Text;
+            sof.PassWord = passWord.Text;
+            sof.Destination = textBoxDestination.Text.ToString();
+            sof.Priority = comboPriority.SelectedItem.ToString();
+            sof.Receipt = Receipt.Text;
+            sof.Sender = SenderFaxNumber.Text.ToString();
+            sof.FaxRequestDateTime = FaxRequestDateTime.ToString();
+
+            VMExpertiseXMLGenerator.SendOutboundFAXDocument doc01 = new VMExpertiseXMLGenerator.SendOutboundFAXDocument();
+            doc01.SeqNumber = comboSeqNumber.SelectedItem.ToString();
+            doc01.DocumentId = textBoxDocumentId.Text.ToString();
+
+            // doc01.DocumentType ========================================================
+            if (comboDocumentType.SelectedItem.Equals(0))
+            {
+                doc01.DocumentType = "PDF";
+            }
+            if (comboDocumentType.SelectedItem.Equals(1))
+            {
+                doc01.DocumentType = "xHTML";
+            }
+            if (comboDocumentType.SelectedItem.Equals(2))
+            {
+                doc01.DocumentType = "MS-DOC";
+            }
+            // doc01.DocumentType ========================================================
+
+            doc01.DocumentContent = File.ReadAllBytes(textBoxDoc1.Text);
+            sof.Documents = new[] {
+
+                doc01
+            };
+
+            //MessageBox.Show(doc01.DocumentContent.ToString());
+            //int a = 1;
+
+            env.Body.SendFAX = new VMExpertiseXMLGenerator.SendFAX();
+            env.Body.SendFAX.SendOutboundFAX = sof;
+
+
+
+            XmlSerializer xsSubmit = new XmlSerializer(typeof(VMExpertiseXMLGenerator.Envelope));
+            
+            var xml = "";
+
+            using (var sww = new StringWriter())
+            {
+                using (XmlWriter writer = XmlWriter.Create(sww))
+                {
+                    xsSubmit.Serialize(writer, env);
+                    xml = sww.ToString(); // Your XML
+                }
+            }
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
+            BuildXMLMessage();
             SendOutboundFAXType sof = new SendOutboundFAXType();
 
             sof.UserName = uName.Text;
